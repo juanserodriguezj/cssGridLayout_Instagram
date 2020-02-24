@@ -11,11 +11,15 @@
             margin: 0;
             font-family: Arial;
         }
-
+        /* Vamos a empezar a trabajar en nuestro contenedo */
         .post-list{
+            /* Si yo quiero trabajar un grilla tengo que empezar con el tipo de display grid */
             display: grid;
+            /* Defino el numero de columnas usando la funcion repeat indicando el numero de filas y luego otra funcion minmax par definirle un tamaño minimo y un tamaño maximo */
             grid-template-columns: repeat(3, minmax(100px, 293px));
+            /* Centramos nuestro contenido completo */
             justify-content: center;
+            /* Agremaos un espaciado entre las columnas*/
             grid-gap: 28px;
         }
         /* Vamos a hacer la parte del post y como se ve esteticamente */
