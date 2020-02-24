@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
+    <!-- Empezamos con el css del proyecto dentro de la etiqueta style -->
     <style>
+        /* Al body le cambiamos la fuente y le quitamos el margin */
         body{
             margin: 0;
             font-family: Arial;
@@ -16,43 +18,67 @@
             justify-content: center;
             grid-gap: 28px;
         }
-
+        /* Vamos a hacer la parte del post y como se ve esteticamente */
         .post{
+            /* Agregamos cursor pointer para que el cursor cambie a la manito cuando pase por nuestra foto */
             cursor: pointer;
+            /* Es el elemento mas cercano con posicion relativa al post-overlay */
             position: relative;
+            /* Cambiamos el tipo de display nuestra ancla */
             display: block;
         }
+        /* con la clase post-image le damos estilos a la etiqueta figure*/
         .post-image{
+            /* con margin le quitamos las margenes por que la etiqueta figure ya trae una por defecto */
             margin: 0;
         }
+        /* Vamos a la etiqueta img dentro de la clase post-image */
         .post-image img {
+            /* El ancho maximo que va ocupar va a ser el mismo que el de .post  */
             width: 100%;
+            /* Nos ayuda a un posicionamiento y un darle un margen que sale abajo de las imagenes */
             vertical-align: top;
         }
+        /* Es el cuadro que nos sale cunado pasamos por encima de las imageness y nos muestra informacion adicional, likes y comentarios */
         .post-overlay{
+            /* Le daremos un fondo transparente negro */
             background: rgba(0, 0, 0, .4);
+            /*  */
             position: absolute;
+            /* Tome todo el espacio que tenga su contenedor mas cercano con posicion relativa */
             left: 0;
             right: 0;
             bottom: 0;
             top:0;
+            /* Decidimos que por defecto no se va a ver por eso el display tiene el valor de none */
             display: none;
+            /* Centramos verticalmente nuestro elementos */
             align-items: center;
+            /* Centramos horizontalmente nuestro elementos */
             justify-content: center;
+            /* cambiamos el color de fuente a blanco */
             color: white;
+            /* para centrar los textos dentro del elemento */
             text-align: center;
         }
-
+        /* Cuando yo pase por encima del .post la clase post-overlay se activara haciendo que el display cambie*/
         .post:hover .post-overlay{
+            /* Agregamos display flex para ordenar algunos elementos que iran por dentro. */
             display: flex
         }
 
+        /* Le damos los mismos estilos a nuestros likes y comentarios */
         .post-likes,
         .post-comments {
+            /* un ancho */
             width: 80px;
+            /* un margen entre ellos */
             margin: 5px;
+            /* un peso de fuente  */
             font-weight: bold;
+            /* un alineamiento de centro */
             text-align: center;
+            /* para que esten uno al costado del otro ponemos un display diferente */
             display: inline-block;
             
         }
@@ -65,15 +91,24 @@
 
     </style>
 </head>
+<!-- Primero vamos a crear la parte del contenido que tendria instagram. -->
 <body>
+    <!-- Creamos una seccion de posts llamada con la clase post-list -->
     <section class="post-list">
+        <!-- Creamos un ancla con la clase post, el cuadradito donde iria mi foto -->
         <a href="" class="post">
+            <!-- creamos un figure con la clase post-image -->
             <figure class="post-image">
+                <!-- Aca adentro irá nuestra imagen -->
                 <img src="compu.jpg" alt="">
             </figure>
+            <!--  -->
             <div class="post-overlay">
+                <!-- agregamos un parrado que adentro tiene un span -->
                 <p>
+                    <!-- span que motrara en numero de likes con la clase post-likes-->
                     <span class="post-likes">150</span>
+                    <!-- span que motrara en numero de comentarios con la clase post-comments-->
                     <span class="post-comments">10</span>
                 </p>
             </div>
